@@ -11,19 +11,19 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 14px;
   background-color: var(--background);
   color: var(--foreground);
 }
 
 h1, h2, h3 {
-  font-family: 'Source Code Pro', monospace;
   margin-bottom: 1rem;
   position: relative;
 }
 
 h1, h2 {
+  font-family: 'Source Code Pro', monospace;
   width: 100%;
   font-size: 3rem;
   border: 1px solid #666;
@@ -32,6 +32,7 @@ h1, h2 {
 }
 
 h3 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.75rem;
 }
 
