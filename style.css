@@ -1,3 +1,9 @@
+:root {
+  --background: #141414;
+  --foreground: #d5d5d5;
+  --accent: #92DCE5;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,15 +11,16 @@
 }
 
 body {
-  font-family: 'Source Code Pro', monospace;
-  font-size: 12px;
-  background-color: #333;
-  color: #d5d5d5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Source Code Pro', monospace;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 h1 {
@@ -24,18 +31,98 @@ h2 {
   font-size: 2rem;
 }
 
+h3 {
+  font-size: 1.5rem;
+}
+
+header {
+  background-color: #101010;
+  padding: .6rem;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 0 4px #141414;
+}
+
+header ul {
+  list-style-type: none;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+header a {
+  color: #d5d5d5;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: #f5f5f5;
+  text-decoration: underline;
+}
+
 section {
   padding: 3rem 0;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero {
   width: 100%;
-  background: url(/img/hero.jpeg) #4357ad no-repeat fixed center center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* background: url(/img/hero.png) no-repeat fixed center center; */
+  flex-direction: column;
   gap: 1rem;
+}
+
+.hero .content {
+  width: 80%;
+}
+
+.hero .labeled {
+  width: 100%;
+  font-size: 3rem;
+  border: 1px solid #666;
+  border-radius: 5px;
+  padding: .7rem;
+}
+
+.labeled::before {
+  background-color: #141414;
+  font-size: 1rem;
+  padding: .3rem;
+  position: absolute;
+  top: -15px;
+  left: 15px;
+  
+}
+
+h1.labeled::before {
+  content: 'Name'
+}
+
+h2.labeled::before {
+  content: 'Title'
+}
+
+h2.labeled::after {
+  content: '|';
+  color: var(--accent);
+  animation: 1s infinite steps(1, jump-start) blink;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+
+  50% { 
+    opacity : 0;
+  }
+
+  to { 
+    opacity : 1;
+  }
 }
 
 .hero img {
