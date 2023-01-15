@@ -23,16 +23,16 @@ h1, h2, h3 {
   position: relative;
 }
 
-h1 {
+h1, h2 {
+  width: 100%;
   font-size: 3rem;
-}
-
-h2 {
-  font-size: 2rem;
+  border: 1px solid #666;
+  border-radius: 5px;
+  padding: .7rem;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 
 header {
@@ -77,14 +77,6 @@ section {
 
 .hero .content {
   width: 80%;
-}
-
-.hero .labeled {
-  width: 100%;
-  font-size: 3rem;
-  border: 1px solid #666;
-  border-radius: 5px;
-  padding: .7rem;
 }
 
 .labeled::before {
