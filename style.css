@@ -1,3 +1,5 @@
+/* BASE */
+
 :root {
   --background: #141414;
   --foreground: #d5d5d5;
@@ -38,6 +40,17 @@ h3 {
   font-size: 1.75rem;
 }
 
+section {
+  height: 100vh;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* HEADER */
+
 header {
   background-color: #141414;
   padding: .6rem;
@@ -66,26 +79,19 @@ header a:hover {
   /* text-decoration: underline; */
 }
 
-section {
-  height: 100vh;
-  padding: 3rem 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero {
-  width: 100%;
-  /* background: url(/img/hero.png) no-repeat fixed center center; */
-  gap: 1rem;
-}
-
 section .content {
   max-width: 80%;
 }
 
-.labeled::before {
+/* HERO */
+
+.hero {
+  /* background: url(/img/hero.png) no-repeat fixed center center; */
+  gap: 1rem;
+}
+
+.hero h1::before,
+  .hero h2::before {
   background-color: #141414;
   font-size: 1rem;
   padding: .3rem;
@@ -95,15 +101,15 @@ section .content {
   
 }
 
-h1.labeled::before {
+.hero h1::before {
   content: 'Name'
 }
 
-h2.labeled::before {
+.hero h2::before {
   content: 'Title'
 }
 
-h2.labeled::after {
+.hero h2::after {
   content: '|';
   color: var(--accent);
   animation: 1s infinite steps(1, jump-start) blink;
@@ -123,6 +129,8 @@ h2.labeled::after {
   }
 }
 
+/* ABOUT */
+
 .about .content {
   justify-content: center;
 }
@@ -136,6 +144,8 @@ img.avatar {
 p {
   margin-bottom: 1rem;
 }
+
+/* UNDER CONSTRUCTION */
 
 .construction {
   font-size: 1.5rem;
