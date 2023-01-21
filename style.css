@@ -4,6 +4,9 @@
   --background: #141414;
   --foreground: #d5d5d5;
   --accent: #92DCE5;
+  --accent-light: #a2eaf3;
+
+  --base-sizing: 1rem;
 
   scroll-behavior: smooth;
 }
@@ -22,7 +25,7 @@ body {
 }
 
 h1, h2, h3 {
-  margin-bottom: 1rem;
+  margin-bottom: var(--base-sizing);
   position: relative;
 }
 
@@ -45,6 +48,10 @@ h4 {
   font-size: 1.2rem;
 }
 
+h5 {
+  font-size: 1.1rem;
+}
+
 section {
   height: 100vh;
   padding: 3rem 0;
@@ -52,6 +59,18 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+ul, p {
+  margin-bottom: var(--base-sizing);
+}
+
+.accent {
+  background-color: var(--accent);
+}
+
+.accent-text {
+  color: var(--accent);
 }
 
 /* HEADER */
@@ -62,15 +81,16 @@ header {
   position: sticky;
   top: 0;
   box-shadow: 0 0 4px #141414;
+  display: flex;
+  justify-content: space-between;
   z-index: 10;
 }
 
 header nav {
   list-style-type: none;
-  padding: 1rem;
+  padding: var(--base-sizing);
   display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
+  gap: var(--base-sizing);
 }
 
 a {
@@ -83,6 +103,20 @@ a:hover {
   color: #92DCE5;
 }
 
+a.button {
+  border: 1px solid var(--background);
+  border-radius: 3px;
+  padding: var(--base-sizing);
+}
+
+a.button.accent {
+  color: var(--background)
+}
+
+a.button.accent:hover {
+  background-color: var(--accent-light);
+}
+
 section .content {
   max-width: 600px;
 }
@@ -91,12 +125,13 @@ section .content {
 
 .hero {
   /* background: url(/img/hero.png) no-repeat fixed center center; */
-  gap: 1rem;
+  gap: var(--base-sizing);
 }
 
 .hero h1::before,
 .hero h2::before {
-  font-size: 1rem;
+  background-color: var(--background);
+  font-size: var(--base-sizing);
   padding: .3rem;
   position: absolute;
   top: -15px;
@@ -141,11 +176,11 @@ section .content {
 img.avatar {
   width: 100px;
   float: left;
-  margin-right: 1rem;
+  margin-right: var(--base-sizing);
 }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: var(--base-sizing);
 }
 
 /* UNDER CONSTRUCTION */
@@ -222,6 +257,20 @@ p {
 .job li::marker {
   content: '</> ';
   font-family: 'Source Code Pro', monospace;
-  font-size: .55rem;
+  font-size: .5rem;
   font-weight: bold;
+  color: var(--accent);
+}
+
+/* PROJECTS */
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--base-sizing);
+}
+
+.projects img {
+  max-width: 275px;
 }

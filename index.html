@@ -14,13 +14,18 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="home"></div>
     <header>
       <nav>
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </nav>
+      <a class="button accent" href="assets/Resume-2023.pdf" target="_blank"
+        >Resume</a
+      >
     </header>
 
     <section class="hero">
@@ -38,7 +43,7 @@
         <p>
           <img
             class="avatar"
-            src="img/avatar.png"
+            src="assets/avatar.png"
             alt="Me with our sugar glider Snow on my head (RIP)"
           />
           Excepteur consectetur occaecat duis ea ex commodo aliqua duis nostrud
@@ -69,6 +74,7 @@
         <li><a href="#mse">Mass Enthusiasm</a></li>
         <li><a href="#rsp">Ron Sherman Productions</a></li>
       </nav>
+
       <div class="slider">
         <div class="job slide" id="aps">
           <div class="header">
@@ -76,80 +82,129 @@
             @
             <span class="location">Advanced Pathology Solutions</span>
           </div>
-          <div class="years">January 2021 -</div>
+          <div class="years">Jan 2021 -</div>
           <ul>
-            <li>Develop UI/UX for in-house medical software</li>
             <li>
-              Create scripts (cron jobs and scheduled) for monitoring and
-              maintaining the health of our systems
+              Extend and improve UI/UX, servers and databases for in-house
+              medical software
             </li>
-            <li>Help to automate pathologist/accessioner workflows</li>
+            <li>Help to automate pathologist and sales rep workflows</li>
+            <li>
+              Create new software applications for use in clinics productivity
+            </li>
           </ul>
+          <p>
+            Technologies/Skills: Vue, Vuex, HTML5, CSS3, Vuetify, Unix, Node
+            (Javascript), Pug, PostgreSQL, Prisma/Sequelize (ORM),
+            MongoDB/Mongoose
+          </p>
         </div>
+
         <div class="job slide" id="hyp">
           <div class="header">
             <h4>Front End Developer</h4>
             @
             <span class="location">Hypnos Virtual</span>
           </div>
-          <div class="years">January 2021 -</div>
+          <div class="years">Oct 2020 - Dec 2020</div>
           <ul>
-            <li>Develop UI/UX for in-house medical software</li>
-            <li>
-              Create scripts (cron jobs and scheduled) for monitoring and
-              maintaining the health of our systems
-            </li>
-            <li>Help to automate pathologist/accessioner workflows</li>
+            <li>Extend and improve UI/UX for video archive</li>
+            <li>Improve video experience, including 3D videos</li>
           </ul>
+          <p>Technologies/Skills: Vue, HTML5, CSS3, Javascript</p>
         </div>
+
         <div class="job slide" id="ids">
           <div class="header">
             <h4>Front End Developer</h4>
             @
             <span class="location">Idestini</span>
           </div>
-          <div class="years">January 2021 -</div>
+          <div class="years">Oct 2018 - Oct 2020</div>
           <ul>
-            <li>Develop UI/UX for in-house medical software</li>
+            <li>Create custom software for various clients</li>
+            <li>Work on controllers/servers</li>
+            <li>Make some decisions about our front end stack</li>
             <li>
-              Create scripts (cron jobs and scheduled) for monitoring and
-              maintaining the health of our systems
+              Integrate Umbraco CMS into projects to give clients more control
             </li>
-            <li>Help to automate pathologist/accessioner workflows</li>
           </ul>
+          <p>
+            Technologies/Skills: AngularJS, React, jQuery, CSS3, Bootstrap,
+            Umbraco CMS, HTML5, .NET, Razor, Entity Framework, SQL Server,
+            Wordpress, Squarespace
+          </p>
         </div>
+
         <div class="job slide" id="mse">
           <div class="header">
             <h4>Web Developer</h4>
             @
             <span class="location">Mass Enthusiasm</span>
           </div>
-          <div class="years">January 2021 -</div>
+          <div class="years">Apr 2012 - Dec 2012</div>
           <ul>
-            <li>Develop UI/UX for in-house medical software</li>
             <li>
-              Create scripts (cron jobs and scheduled) for monitoring and
-              maintaining the health of our systems
+              Build websites for local clients from scratch, going off of
+              provided designs
             </li>
-            <li>Help to automate pathologist/accessioner workflows</li>
+            <li>Integrate Silverstripe CMS into created website templates</li>
           </ul>
+          <p>Technologies/Skills: HTML5, CSS3, Javascript, Silverstripe CMS</p>
         </div>
+
         <div class="job slide" id="rsp">
           <div class="header">
             <h4>Web Developer</h4>
             @
             <span class="location">Ron Sherman Productions</span>
           </div>
-          <div class="years">January 2021 -</div>
+          <div class="years">Feb 2010 - Feb 2012</div>
           <ul>
-            <li>Develop UI/UX for in-house medical software</li>
             <li>
-              Create scripts (cron jobs and scheduled) for monitoring and
-              maintaining the health of our systems
+              Design and build websites with pure HTML/CSS for (mostly) home
+              improvement clients
             </li>
-            <li>Help to automate pathologist/accessioner workflows</li>
+            <li>
+              Create graphics, ads and lower thirds for use on television and
+              landing pages for advertising
+            </li>
           </ul>
+          <p>
+            Technologies/Skills: HTML, CSS, Javascript, jQuery, PHP, Photoshop
+          </p>
         </div>
+      </div>
+    </section>
+
+    <section>
+      <h3 id="projects">Projects</h3>
+
+      <div class="projects">
+        <div class="project">
+          <img src="assets/projects/nonogram.png" />
+          <h5>Crono</h5>
+        </div>
+        <div class="project">
+          <img src="assets/projects/nonogram.png" />
+          <h5>Nonogram</h5>
+        </div>
+        <div class="project">
+          <img src="assets/projects/nonogram.png" />
+          <h5>Minesweeper</h5>
+        </div>
+        <div class="project">
+          <img src="assets/projects/nonogram.png" />
+          <h5>Nightmare VSCode Theme</h5>
+        </div>
+        <div class="project">
+          <img src="assets/projects/nonogram.png" />
+          <h5>Dexio</h5>
+        </div>
+        <!--<div class="project">
+          <img src="assets/projects/nonogram.png" />
+          <h5>Nonogram</h5>
+        </div>-->
       </div>
     </section>
 
