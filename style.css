@@ -97,6 +97,7 @@ a {
   font-family: 'Source Code Pro', monospace;
   color: #d5d5d5;
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover {
@@ -265,12 +266,78 @@ p {
 /* PROJECTS */
 
 .projects {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   gap: var(--base-sizing);
 }
 
-.projects img {
-  max-width: 275px;
+.project {
+  width: 295px;
+  display: grid;
+  grid-template-columns: 1fr 0fr;
+  gap: .5rem;
+  transition: .3s;
+}
+
+.project:hover {
+  grid-template-columns: 2fr 1fr;
+}
+
+.project .right {
+  display: none;
+  opacity: 0;
+  transition: .5s;
+}
+
+.project:hover .right {
+  display: block;
+  opacity: 1;
+}
+
+.project h5 {
+  grid-column: 1 / -1;
+}
+
+.project img {
+  width: 100%;
+}
+
+.project .tag {
+  background: var(--foreground);
+  color: var(--background);
+  font-family: 'Source Code Pro', monospace;
+  font-size: .6rem;
+  border-radius: 3px;
+  padding: .2rem;
+  text-transform: uppercase;
+}
+
+.tag.react {
+  background-color: #5ed3f3;
+  color: var(--background)
+}
+.tag.styled {
+  background-color: #e48cd6;
+  color: var(--background)
+}
+.tag.vercel {
+  background-color: #fff;
+  color: var(--background)
+}
+.tag.tailwind {
+  background-color: #0ea5e9;
+  color: var(--background)
+}
+.tag.npm {
+  background-color: #c53635;
+  color: var(--foreground)
+}
+.tag.ts {
+  background-color: #2f74c0;
+  color: var(--foreground)
+}
+.tag.vsc {
+  background-color: #40a8eb;
+  color: var(--background)
 }
