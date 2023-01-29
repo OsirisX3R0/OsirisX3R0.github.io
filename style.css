@@ -237,6 +237,41 @@ p {
   flex-shrink: 0;
 }
 
+.jobs {
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: minmax(600px, 1fr);
+}
+
+.job {
+  padding: 1rem 1rem 2rem;
+}
+
+.job:not(:last-child) {
+  border-bottom: 1px solid var(--accent);
+}
+
+.job summary {
+  height: 0;
+  transition: .2s;
+}
+
+.job[open] {
+  animation: .3s accordion;
+}
+
+.job[open] summary {
+  height: auto;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.job summary::marker {
+  color: var(--accent);
+  font-size: .65rem;
+  transition: .2s;
+}
+
 .job h4 {
   color: var(--accent);
   display: inline-block;
@@ -261,6 +296,19 @@ p {
   font-size: .5rem;
   font-weight: bold;
   color: var(--accent);
+}
+
+@keyframes accordion {
+  0% {
+    /* height: 0; */
+    opacity: 0;
+    /* transform: translateY(-1.25em); */
+  }
+  100% {
+    /* height: auto; */
+    opacity: 1;
+    /* transform: translateY(0); */
+  }
 }
 
 /* PROJECTS */
@@ -299,11 +347,30 @@ p {
   grid-column: 1 / -1;
 }
 
-.project img {
+img {
   width: 100%;
 }
 
-.project .tag {
+dialog#projectDialog {
+  width: 80%;
+  background-color: var(--background);
+  color: var(--foreground);
+  border-radius: 3px;
+  margin: auto;
+  padding: 1.25rem;
+}
+
+dialog#projectDialog form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+dialog#projectDialog .content p {
+  margin-top: .65rem;
+}
+
+.tag {
   background: var(--foreground);
   color: var(--background);
   font-family: 'Source Code Pro', monospace;

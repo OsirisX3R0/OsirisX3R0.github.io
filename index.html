@@ -67,16 +67,17 @@
 
     <section class="experience">
       <h3 id="experience">Experience</h3>
-      <nav>
+      <!--<nav>
         <li><a href="#aps">Advanced Pathology Solutions</a></li>
         <li><a href="#hyp">Hypnos Virtual</a></li>
         <li><a href="#ids">Idestini</a></li>
         <li><a href="#mse">Mass Enthusiasm</a></li>
         <li><a href="#rsp">Ron Sherman Productions</a></li>
-      </nav>
+      </nav>-->
 
-      <div class="slider">
-        <div class="job slide" id="aps">
+      <div class="jobs">
+        <details class="job" id="aps">
+          <summary>Advanced Pathology Solutions</summary>
           <div class="header">
             <h4>Fullstack Developer</h4>
             @
@@ -98,9 +99,10 @@
             (Javascript), Pug, PostgreSQL, Prisma/Sequelize (ORM),
             MongoDB/Mongoose
           </p>
-        </div>
+        </details>
 
-        <div class="job slide" id="hyp">
+        <details class="job" id="hyp">
+          <summary>Hypnos Virtual</summary>
           <div class="header">
             <h4>Front End Developer</h4>
             @
@@ -112,9 +114,10 @@
             <li>Improve video experience, including 3D videos</li>
           </ul>
           <p>Technologies/Skills: Vue, HTML5, CSS3, Javascript</p>
-        </div>
+        </details>
 
-        <div class="job slide" id="ids">
+        <details class="job" id="ids">
+          <summary>Idestini</summary>
           <div class="header">
             <h4>Front End Developer</h4>
             @
@@ -134,9 +137,10 @@
             Umbraco CMS, HTML5, .NET, Razor, Entity Framework, SQL Server,
             Wordpress, Squarespace
           </p>
-        </div>
+        </details>
 
-        <div class="job slide" id="mse">
+        <details class="job" id="mse">
+          <summary>Mass Enthusiasm</summary>
           <div class="header">
             <h4>Web Developer</h4>
             @
@@ -151,9 +155,10 @@
             <li>Integrate Silverstripe CMS into created website templates</li>
           </ul>
           <p>Technologies/Skills: HTML5, CSS3, Javascript, Silverstripe CMS</p>
-        </div>
+        </details>
 
-        <div class="job slide" id="rsp">
+        <details class="job" id="rsp">
+          <summary>Ron Sherman Productions</summary>
           <div class="header">
             <h4>Web Developer</h4>
             @
@@ -173,7 +178,7 @@
           <p>
             Technologies/Skills: HTML, CSS, Javascript, jQuery, PHP, Photoshop
           </p>
-        </div>
+        </details>
       </div>
     </section>
 
@@ -259,6 +264,35 @@
         </div>-->
       </div>
     </section>
+
+    <dialog id="projectDialog">
+      <h3>Crono</h3>
+      <form method="dialog">
+        <img src="assets/projects/nonogram.png" />
+        <div class="content">
+          <span class="tag react">React</span>
+          <span class="tag tailwind">Tailwind</span>
+          <span class="tag vercel">Vercel</span>
+          <p>
+            In laborum do labore non. Nulla magna sint elit ut anim veniam.
+            Laborum nulla ex sunt magna reprehenderit cillum id est sit sunt
+            aute cupidatat. Enim incididunt laboris ullamco amet ipsum est
+            voluptate ipsum in nulla reprehenderit magna incididunt in. Tempor
+            reprehenderit dolore cillum mollit aute cillum incididunt laboris ut
+            labore pariatur culpa.
+          </p>
+          <p>
+            In laborum do labore non. Nulla magna sint elit ut anim veniam.
+            Laborum nulla ex sunt magna reprehenderit cillum id est sit sunt
+            aute cupidatat. Enim incididunt laboris ullamco amet ipsum est
+            voluptate ipsum in nulla reprehenderit magna incididunt in. Tempor
+            reprehenderit dolore cillum mollit aute cillum incididunt laboris ut
+            labore pariatur culpa.
+          </p>
+          <button value="cancel">Close</button>
+        </div>
+      </form>
+    </dialog>
 
     <script type="text/javascript" src="script.js"></script>
   </body>
