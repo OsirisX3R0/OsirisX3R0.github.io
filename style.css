@@ -54,7 +54,7 @@ h5 {
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: var(--base-sizing);
 }
 
 section {
@@ -81,7 +81,7 @@ ul, p {
 /* HEADER */
 
 header {
-  background-color: #141414;
+  background-color: var(--background);
   padding: .6rem;
   position: sticky;
   top: 0;
@@ -100,7 +100,7 @@ header nav {
 
 a {
   font-family: 'Source Code Pro', monospace;
-  color: #d5d5d5;
+  color: var(--foreground);
   text-decoration: none;
   cursor: pointer;
 }
@@ -230,7 +230,7 @@ p {
 }
 
 .job {
-  padding: 1rem 1rem 2rem;
+  padding: var(--base-sizing) var(--base-sizing) 2rem;
 }
 
 .job:not(:last-child) {
@@ -356,7 +356,7 @@ p {
 
 .project:hover {
   grid-template-columns: 4fr 2fr;
-  gap: 1rem;
+  gap: var(--base-sizing);
 }
 
 .project .right {
@@ -413,7 +413,7 @@ dialog#projectDialog {
 dialog#projectDialog form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: var(--base-sizing);
 }
 
 dialog#projectDialog .content p {
@@ -462,6 +462,7 @@ dialog#projectDialog .content p {
 .contact .card {
   background-color: var(--foreground);
   color: var(--background);
+  border: 1px solid var(--background);
   border-radius: 5px;
   padding: 2rem;
   position: relative;
@@ -489,4 +490,13 @@ dialog#projectDialog .content p {
 
 .contact .card :is(h3, h6) {
   margin-bottom: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #d5d5d5;
+    --foreground: #141414;
+    --accent: #92DCE5;
+    --accent-light: #a2eaf3;
+  }
 }
