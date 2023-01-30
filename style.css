@@ -46,6 +46,7 @@ h3 {
 h4 {
   font-family: 'Source Code Pro', monospace;
   font-size: 1.2rem;
+  margin-bottom: var(--base-sizing);
 }
 
 h5 {
@@ -456,4 +457,36 @@ dialog#projectDialog .content p {
 .tag.vsc {
   background-color: #40a8eb;
   color: var(--background)
+}
+
+.contact .card {
+  background-color: var(--foreground);
+  color: var(--background);
+  border-radius: 5px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact .card::before {
+  content: '</>';
+  color: var(--accent);
+  filter: brightness(0.7) opacity(0.3);
+  font-size: 6rem;
+  position: absolute;
+  top: -50px;
+  left: -20px;
+}
+
+.contact .card a {
+  color: var(--background);
+  text-decoration: none;
+}
+
+.contact .card a:hover {
+  text-decoration: underline;
+}
+
+.contact .card :is(h3, h6) {
+  margin-bottom: 0;
 }
