@@ -33,4 +33,13 @@ for (let details of jobs) {
   });
 }
 
-const projectLinks = document.querySelectorAll(".project .right a");
+// Generate project nav
+const projectSlider = document.querySelector(".projects .slider + nav");
+const projects = document.querySelectorAll(".project");
+for (let project of projects) {
+  let li = document.createElement("li");
+  let a = document.createElement("a");
+  a.href = `#${project.id}`;
+  li.appendChild(a);
+  projectSlider.appendChild(li);
+}

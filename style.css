@@ -324,25 +324,38 @@ p {
   flex-shrink: 0;
 }
 
-/* .projects {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.slider + nav {
+  width: 600px;
+  height: 15px;
+  margin-top: .5rem;
+  list-style-type: none;
+  grid-column: 1 / -1;
+  display: flex;
   justify-content: center;
-  gap: var(--base-sizing);
-} */
+}
+
+.slider + nav li a {
+  width: 10px;
+  height: 10px;
+  background-color: var(--foreground);
+  border-radius: 50%;
+  margin: 0 .5rem;
+  display: inline-block;
+}
 
 .project {
   width: 600px;
   display: grid;
   grid-template-columns: 1fr 0fr;
   grid-template-rows: auto 1fr;
-  gap: 1rem;
+  gap: 0;
   align-items: flex-start;
   transition: .5s;
 }
 
 .project:hover {
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 4fr 2fr;
+  gap: 1rem;
 }
 
 .project .right {
