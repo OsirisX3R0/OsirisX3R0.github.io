@@ -8,6 +8,7 @@
 
   --base-sizing: 1rem;
 
+  font-size: 14px;
   scroll-behavior: smooth;
 }
 
@@ -19,7 +20,6 @@
 
 body {
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 14px;
   background-color: var(--background);
   color: var(--foreground);
 }
@@ -31,7 +31,7 @@ h1, h2, h3 {
 
 h1, h2 {
   font-family: 'Source Code Pro', monospace;
-  width: 100%;
+  /* width: 100%; */
   font-size: 3rem;
   border: 1px solid #666;
   border-radius: 5px;
@@ -59,11 +59,14 @@ h6 {
 
 section {
   height: 100vh;
-  padding: 3rem 0;
+  padding: 6rem 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+section .content {
+  width: 600px;
 }
 
 ul, p {
@@ -121,10 +124,6 @@ a.button.accent {
 
 a.button.accent:hover {
   background-color: var(--accent-light);
-}
-
-section .content {
-  max-width: 600px;
 }
 
 /* HERO */
@@ -224,7 +223,7 @@ p {
 }
 
 .jobs {
-  max-width: 600px;
+  /* max-width: 600px; */
   display: grid;
   grid-template-columns: minmax(600px, 1fr);
 }
@@ -498,5 +497,11 @@ dialog#projectDialog .content p {
     --foreground: #141414;
     --accent: #92DCE5;
     --accent-light: #a2eaf3;
+  }
+}
+
+@media(max-width: 575px) {
+  :root {
+    font-size: 10px;
   }
 }
