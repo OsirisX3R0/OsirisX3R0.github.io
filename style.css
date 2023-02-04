@@ -235,9 +235,9 @@ h4:has(+ .tech) {
   padding: .5rem;
 }
 
-.experience nav li:not(:last-child) {
+/* .experience nav li:not(:last-child) {
   border-right: 1px solid #333;
-}
+} */
 
 .experience nav a {
   transition: font-size .5s;
@@ -257,9 +257,9 @@ h4:has(+ .tech) {
   padding: var(--base-sizing) var(--base-sizing) 2rem;
 }
 
-.job:not(:last-child) {
+/* .job:not(:last-child) {
   border-bottom: 1px solid var(--accent);
-}
+} */
 
 .job summary {
   height: 0;
@@ -324,8 +324,8 @@ h4:has(+ .tech) {
 /* PROJECTS */
 
 .slider {
-  width: 600px;
-  height: 400px;
+  max-width: 600px;
+  height: 310px;
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
@@ -340,11 +340,12 @@ h4:has(+ .tech) {
 }
 
 .slider > .slide {
-  scroll-snap-align: start
+  scroll-snap-align: start;
+  flex-shrink: 0;
 }
 
 .slide {
-  width: 600px;
+  max-width: 600px;
   height: 100%;
   flex-shrink: 0;
 }
