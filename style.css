@@ -266,10 +266,6 @@ h4:has(+ .tech) {
   transition: .2s;
 }
 
-.job[open] {
-  animation: .3s accordion;
-}
-
 .job[open] summary {
   height: auto;
   color: var(--accent);
@@ -307,21 +303,6 @@ h4:has(+ .tech) {
   font-weight: bold;
   color: var(--accent);
 }
-
-@keyframes accordion {
-  0% {
-    /* height: 0; */
-    opacity: 0;
-    /* transform: translateY(-1.25em); */
-  }
-  100% {
-    /* height: auto; */
-    opacity: 1;
-    /* transform: translateY(0); */
-  }
-}
-
-/* PROJECTS */
 
 .slider {
   max-width: 600px;
@@ -369,8 +350,17 @@ h4:has(+ .tech) {
   display: inline-block;
 }
 
+/* PROJECTS */
+
+div.projects {
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  gap: var(--base-sizing);
+}
+
 .project {
-  width: 600px;
+  width: 300px;
   display: grid;
   grid-template-columns: 1fr 0fr;
   grid-template-rows: auto 1fr;
@@ -395,8 +385,6 @@ h4:has(+ .tech) {
   display: block;
   opacity: 1;
 }
-
-
 
 .project .right p {
   margin-top: .75rem;
@@ -445,6 +433,13 @@ dialog#projectDialog .content p {
   margin-top: .65rem;
 }
 
+.tags {
+  margin-top: .35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem;
+}
+
 .tag {
   background: var(--foreground);
   color: var(--background);
@@ -483,6 +478,12 @@ dialog#projectDialog .content p {
   background-color: #40a8eb;
   color: var(--background)
 }
+.tag.node {
+  background-color: #026e00;
+  color: var(--foreground);
+}
+
+/* CONTACT */
 
 .contact .card {
   background-color: var(--foreground);
@@ -525,5 +526,9 @@ dialog#projectDialog .content p {
 @media(max-width: 575px) {
   :root {
     font-size: 10px;
+  }
+
+  div.projects {
+    grid-template-columns: 1fr;
   }
 }
