@@ -3,7 +3,7 @@
 :root {
   --background: #141414;
   --foreground: #d5d5d5;
-  --accent: #92DCE5;
+  --accent: #92dce5;
   --accent-light: #a2eaf3;
 
   --base-sizing: 1rem;
@@ -24,23 +24,25 @@ body {
   color: var(--foreground);
 }
 
-h1, h2, h3 {
-  margin-bottom: var(--base-sizing);
+h1, h2 {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 2.7rem;
+  border: 1px solid #666;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  padding: .7rem;
   position: relative;
 }
 
-h1, h2 {
-  font-family: 'Source Code Pro', monospace;
-  /* width: 100%; */
-  font-size: 3rem;
-  border: 1px solid #666;
-  border-radius: 5px;
-  padding: .7rem;
+:is(h2, h3, h4):has(+ :is(h3, h4, h5)) {
+  margin-bottom: 0;
 }
 
 h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.75rem;
+  margin-bottom: var(--base-sizing);
+  position: relative;
 }
 
 h4 {
@@ -58,7 +60,6 @@ h6 {
 }
 
 section {
-  height: 100vh;
   padding: 3rem 1rem;
   display: flex;
   justify-content: center;
@@ -66,7 +67,9 @@ section {
 }
 
 section .content {
-  width: 600px;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 ul, p {
@@ -109,7 +112,7 @@ a {
 }
 
 a:hover {
-  color: #92DCE5;
+  color: #92dce5;
 }
 
 a.button {
@@ -129,8 +132,19 @@ a.button.accent:hover {
 /* HERO */
 
 .hero {
-  /* background: url(/img/hero.png) no-repeat fixed center center; */
   gap: var(--base-sizing);
+}
+
+.hero .content {
+  grid-template-columns: 125px 1fr;
+  gap: var(--base-sizing);
+  align-items: center;
+  justify-items: center;
+}
+
+img.avatar {
+  width: 125px;
+  margin-bottom: var(--base-sizing);
 }
 
 .hero h1::before,
@@ -176,12 +190,6 @@ a.button.accent:hover {
 
 .about .content {
   justify-content: center;
-}
-
-img.avatar {
-  width: 100px;
-  float: left;
-  margin-right: var(--base-sizing);
 }
 
 p {
@@ -487,15 +495,11 @@ dialog#projectDialog .content p {
   text-decoration: underline;
 }
 
-.contact .card :is(h3, h6) {
-  margin-bottom: 0;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     --background: #d5d5d5;
     --foreground: #141414;
-    --accent: #92DCE5;
+    --accent: #92dce5;
     --accent-light: #a2eaf3;
   }
 }
@@ -503,5 +507,9 @@ dialog#projectDialog .content p {
 @media(max-width: 575px) {
   :root {
     font-size: 10px;
+  }
+
+  .hero .content {
+    grid-template-columns: 1fr;
   }
 }
