@@ -70,6 +70,7 @@ section .content {
   max-width: 600px;
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center;
 }
 
 ul, p {
@@ -82,6 +83,10 @@ ul, p {
 
 .accent-text {
   color: var(--accent);
+}
+
+p {
+  margin-bottom: var(--base-sizing);
 }
 
 /* HEADER */
@@ -188,12 +193,25 @@ img.avatar {
 
 /* ABOUT */
 
-.about .content {
-  justify-content: center;
+h4:has(+ .tech) {  
+  margin-top: var(--base-sizing);
 }
 
-p {
-  margin-bottom: var(--base-sizing);
+.tech {
+  display: grid;
+  grid-template-columns: repeat(5, 30px);
+  gap: var(--base-sizing);
+  grid-auto-flow: dense;
+}
+
+.tech img {
+  width: 30px;
+}
+
+.tech img.lg {
+  width: 74px;
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
 /* UNDER CONSTRUCTION */
