@@ -29,7 +29,7 @@ h1, h2 {
   font-size: 2.7rem;
   border: 1px solid #666;
   border-radius: 5px;
-  margin-bottom: 2rem;
+  margin-bottom: var(--base-sizing);
   padding: .7rem;
   position: relative;
 }
@@ -141,15 +141,8 @@ a.button.accent:hover {
 }
 
 .hero .content {
-  grid-template-columns: 125px 1fr;
   gap: var(--base-sizing);
-  align-items: center;
-  justify-items: center;
-}
-
-img.avatar {
-  width: 125px;
-  margin-bottom: var(--base-sizing);
+  justify-items: stretch;
 }
 
 .hero h1::before,
@@ -192,6 +185,12 @@ img.avatar {
 }
 
 /* ABOUT */
+
+img.avatar {
+  width: 125px;
+  margin-left: var(--base-sizing);
+  float: right;
+}
 
 h4:has(+ .tech) {  
   margin-top: var(--base-sizing);
@@ -525,9 +524,5 @@ dialog#projectDialog .content p {
 @media(max-width: 575px) {
   :root {
     font-size: 10px;
-  }
-
-  .hero .content {
-    grid-template-columns: 1fr;
   }
 }
