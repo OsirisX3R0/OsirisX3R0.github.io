@@ -1,18 +1,3 @@
-// Smooth scrolling for the main nav
-let nav = document.querySelectorAll("header nav a");
-for (let link of nav) {
-  link.addEventListener("click", () => {
-    let id = link.href.substring(link.href.lastIndexOf("#"));
-    let element = document.querySelector(id);
-
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  });
-}
-
 // Single-open accordion functionality for jobs
 // const jobs = document.querySelectorAll("details.job");
 // for (let details of jobs) {
@@ -34,12 +19,19 @@ for (let link of nav) {
 // }
 
 // Generate experience nav
-const jobSlider = document.querySelector(".experience .slider + nav");
+const jobSliderWidth = document.querySelector(
+  ".experience .slider"
+).offsetWidth;
+const jobSliderNav = document.querySelector(".experience .slider + nav");
 const jobs = document.querySelectorAll(".job");
 for (let job of jobs) {
+  job.style.width = `${jobSliderWidth}px`;
   let li = document.createElement("li");
   let a = document.createElement("a");
   a.href = `#${job.id}`;
+  // a.addEventListener("click", () => {
+  //   a.classList.toggle("active");
+  // });
   li.appendChild(a);
-  jobSlider.appendChild(li);
+  jobSliderNav.appendChild(li);
 }
