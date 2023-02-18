@@ -226,10 +226,6 @@ h4:has(+ .tech) {
 
 /* EXPERIENCE */
 
-.experience .content {
-
-}
-
 .experience nav {
   font-size: .7rem;
   display: flex;
@@ -249,12 +245,12 @@ h4:has(+ .tech) {
 }
 
 .jobs {
-  /* max-width: 600px; */
-  display: grid;
-  grid-template-columns: minmax(600px, 1fr);
+  /* display: grid; */
+  /* flex-direction: column; */
 }
 
 .job {
+  max-width: 600px;
   padding: var(--base-sizing) var(--base-sizing) 2rem;
 }
 
@@ -363,7 +359,7 @@ div.projects {
   grid-template-rows: auto 1fr;
   gap: 0;
   align-items: flex-start;
-  transition: .5s;
+  transition: .2s;
 }
 
 .project:hover {
@@ -375,7 +371,7 @@ div.projects {
   font-size: .75rem;
   display: none;
   opacity: 0;
-  transition: .5s;
+  transition: .5s .2s;
 }
 
 .project:hover .right {
@@ -411,7 +407,7 @@ img.icon:hover {
   filter: hue-rotate(180deg)
 }
 
-dialog#projectDialog {
+/* dialog#projectDialog {
   width: 80%;
   background-color: var(--background);
   color: var(--foreground);
@@ -428,7 +424,7 @@ dialog#projectDialog form {
 
 dialog#projectDialog .content p {
   margin-top: .65rem;
-}
+} */
 
 .tags {
   margin-top: .35rem;
@@ -520,9 +516,13 @@ dialog#projectDialog .content p {
   }
 }
 
-@media(max-width: 575px) {
+@media(max-width: 600px) {
   :root {
     font-size: 10px;
+  }
+
+  .jobs {
+    grid-template-columns: 1fr;
   }
 
   div.projects {
