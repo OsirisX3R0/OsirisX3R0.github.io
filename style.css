@@ -233,7 +233,33 @@ h4:has(+ .tech) {
 
 /* EXPERIENCE */
 
-.experience nav {
+.testgrid {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 1.5rem;
+}
+
+.testgrid nav {
+  font-size: .8rem;
+}
+
+.testgrid nav ul {
+  height: 100%;
+  margin: 0;
+  display: grid;
+  list-style-type: none;
+  align-items: center;
+}
+
+.testgrid nav a {
+  transition: font-size .5s;
+}
+
+.testgrid nav a:hover {
+  font-size: .9rem;
+}
+
+/* .experience nav {
   font-size: .7rem;
   display: flex;
   list-style-type: none;
@@ -249,12 +275,7 @@ h4:has(+ .tech) {
 
 .experience nav a:hover {
   font-size: .9rem;
-}
-
-.jobs {
-  /* display: grid; */
-  /* flex-direction: column; */
-}
+} */
 
 .job {
   max-width: 600px;
