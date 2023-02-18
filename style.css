@@ -258,9 +258,9 @@ h4:has(+ .tech) {
   padding: var(--base-sizing) var(--base-sizing) 2rem;
 }
 
-/* .job:not(:last-child) {
+.job:not(:last-child) {
   border-bottom: 1px solid var(--accent);
-} */
+}
 
 .job summary {
   height: 0;
@@ -275,8 +275,7 @@ h4:has(+ .tech) {
 
 .job summary::marker {
   color: var(--accent);
-  font-size: .65rem;
-  transition: .2s;
+  font-size: .7rem;
 }
 
 .job h4 {
