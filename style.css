@@ -63,8 +63,14 @@ h6 {
 section {
   padding: 4.25rem 1rem;
   display: flex;
+  opacity: 0;
   justify-content: center;
   align-items: center;
+  transition: .55s;
+}
+
+section.show {
+  opacity: 1;
 }
 
 section .content {

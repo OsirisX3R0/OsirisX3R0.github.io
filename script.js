@@ -1,3 +1,18 @@
+//
+const sections = document.querySelectorAll("section");
+const intObserver = new IntersectionObserver((entries, observer) => {
+  for (let entry of entries) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
+  }
+});
+
+for (let section of sections) {
+  intObserver.observe(section);
+}
+
 // Single-open accordion functionality for jobs
 const jobs = document.querySelectorAll("details.job");
 for (let details of jobs) {
