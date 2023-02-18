@@ -91,70 +91,44 @@
       <section class="experience" id="experience">
         <div class="content">
           <h3>Experience</h3>
-          <div class="testgrid">
+          <div class="jobs">
             <nav>
               <ul>
-                <li><a href="#">APS</a></li>
-                <li><a href="#">Hypnos</a></li>
-                <li><a href="#">Idestini</a></li>
-                <li><a href="#">Mass</a></li>
-                <li><a href="#">RSP</a></li>
+                <li><a id="aps">APS</a></li>
+                <li><a id="hyp">Hypnos</a></li>
+                <li><a id="ids">Idestini</a></li>
+                <li><a id="mse">Mass</a></li>
+                <li><a id="rsp">RSP</a></li>
               </ul>
             </nav>
-            <div class="job">
-              <h4>Advanced Pathology Solutions</h4>
-              <div class="header">
-                <h4>Fullstack Developer</h4>
-                @
-                <span class="location">Advanced Pathology Solutions</span>
-              </div>
-              <div class="years">2021 -</div>
-              <ul>
-                <li>
-                  Extend and improve UI/UX, servers and databases for in-house
-                  medical software
-                </li>
-                <li>Help to automate pathologist and sales rep workflows</li>
-                <li>
-                  Create new software applications for use in clinics
-                  productivity
-                </li>
-              </ul>
-              <p>
-                Technologies/Skills: Vue, Vuex, HTML5, CSS3, Vuetify, Unix, Node
-                (Javascript), Pug, PostgreSQL, Prisma/Sequelize (ORM),
-                MongoDB/Mongoose
-              </p>
-            </div>
-          </div>
-          <!--<div class="jobs">
-            <div class="job" id="aps">
-              <h4>Advanced Pathology Solutions</h4>
-              <div class="header">
-                <h4>Fullstack Developer</h4>
-                @
-                <span class="location">Advanced Pathology Solutions</span>
-              </div>
-              <div class="years">2021 -</div>
-              <ul>
-                <li>
-                  Extend and improve UI/UX, servers and databases for in-house
-                  medical software
-                </li>
-                <li>Help to automate pathologist and sales rep workflows</li>
-                <li>
-                  Create new software applications for use in clinics
-                  productivity
-                </li>
-              </ul>
-              <p>
-                Technologies/Skills: Vue, Vuex, HTML5, CSS3, Vuetify, Unix, Node
-                (Javascript), Pug, PostgreSQL, Prisma/Sequelize (ORM),
-                MongoDB/Mongoose
-              </p>
-            </div>
+            <div class="job"></div>
 
-            <div class="job" id="hyp">
+            <template id="aps">
+              <h4>Advanced Pathology Solutions</h4>
+              <div class="header">
+                <h4>Fullstack Developer</h4>
+                @
+                <span class="location">Advanced Pathology Solutions</span>
+              </div>
+              <div class="years">2021 -</div>
+              <ul>
+                <li>
+                  Extend and improve UI/UX, servers and databases for in-house
+                  medical software
+                </li>
+                <li>Help to automate pathologist and sales rep workflows</li>
+                <li>
+                  Create new software applications for use in clinics
+                  productivity
+                </li>
+              </ul>
+              <p>
+                Technologies/Skills: Vue, Vuex, HTML5, CSS3, Vuetify, Unix, Node
+                (Javascript), Pug, PostgreSQL, Prisma/Sequelize (ORM),
+                MongoDB/Mongoose
+              </p>
+            </template>
+            <template id="hyp">
               <h4>Hypnos Virtual</h4>
               <div class="header">
                 <h4>Front End Developer</h4>
@@ -166,10 +140,9 @@
                 <li>Extend and improve UI/UX for video archive</li>
                 <li>Improve video experience, including 3D videos</li>
               </ul>
-              <p>Technologies/Skills: Vue, HTML5, CSS3, Javascript</p>
-            </div>
-
-            <div class="job" id="ids">
+              <p>Technologies/Skills: Vue, HTML5, CSS3, Javascript</p></template
+            >
+            <template id="ids">
               <h4>Idestini</h4>
               <div class="header">
                 <h4>Front End Developer</h4>
@@ -190,10 +163,9 @@
                 Technologies/Skills: AngularJS, React, jQuery, CSS3, Bootstrap,
                 Umbraco CMS, HTML5, .NET, Razor, Entity Framework, SQL Server,
                 Wordpress, Squarespace
-              </p>
-            </div>
-
-            <div class="job" id="mse">
+              </p></template
+            >
+            <template id="mse">
               <h4>Mass Enthusiasm</h4>
               <div class="header">
                 <h4>Web Developer</h4>
@@ -212,10 +184,9 @@
               </ul>
               <p>
                 Technologies/Skills: HTML5, CSS3, Javascript, Silverstripe CMS
-              </p>
-            </div>
-
-            <div class="job" id="rsp">
+              </p></template
+            >
+            <template id="rsp">
               <h4>Ron Sherman Productions</h4>
               <div class="header">
                 <h4>Web Developer</h4>
@@ -236,10 +207,9 @@
               <p>
                 Technologies/Skills: HTML, CSS, Javascript, jQuery, PHP,
                 Photoshop
-              </p>
-            </div>
-          </div>-->
-          <nav></nav>
+              </p></template
+            >
+          </div>
         </div>
       </section>
 

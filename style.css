@@ -233,17 +233,17 @@ h4:has(+ .tech) {
 
 /* EXPERIENCE */
 
-.testgrid {
+.jobs {
   display: grid;
-  grid-template-columns: 50px 1fr;
+  grid-template-columns: 50px minmax(100px, 550px);
   gap: 1.5rem;
 }
 
-.testgrid nav {
+.jobs nav {
   font-size: .8rem;
 }
 
-.testgrid nav ul {
+.jobs nav ul {
   height: 100%;
   margin: 0;
   display: grid;
@@ -251,11 +251,11 @@ h4:has(+ .tech) {
   align-items: center;
 }
 
-.testgrid nav a {
+.jobs nav a {
   transition: font-size .5s;
 }
 
-.testgrid nav a:hover {
+.jobs nav a:hover {
   font-size: .9rem;
 }
 
@@ -547,10 +547,6 @@ dialog#projectDialog .content p {
 @media(max-width: 600px) {
   :root {
     font-size: 10px;
-  }
-
-  .jobs {
-    grid-template-columns: 1fr;
   }
 
   div.projects {

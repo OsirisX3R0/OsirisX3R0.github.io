@@ -1,4 +1,4 @@
-//
+// Fade-in animation for sections
 const sections = document.querySelectorAll("section");
 const intObserver = new IntersectionObserver((entries, observer) => {
   for (let entry of entries) {
@@ -12,6 +12,24 @@ const intObserver = new IntersectionObserver((entries, observer) => {
 for (let section of sections) {
   intObserver.observe(section);
 }
+
+// Experience functionality
+const experienceNav = document.querySelectorAll(".jobs nav a");
+const jobContainer = document.querySelector(".jobs .job");
+const jobsTemplates = [...document.querySelectorAll(".jobs template")];
+for (let link of experienceNav) {
+  link.addEventListener("click", () => {
+    let template = jobsTemplates.find((j) => j.id === link.id);
+    let jobContent = template.content.cloneNode(true);
+    jobContainer.innerHTML = "";
+    jobContainer.appendChild(jobContent);
+  });
+}
+
+let defualtTemplate = jobsTemplates[0];
+let defaultContent = defualtTemplate.content.cloneNode(true);
+jobContainer.innerHTML = "";
+jobContainer.appendChild(defaultContent);
 
 // Single-open accordion functionality for jobs
 const jobs = document.querySelectorAll("details.job");
