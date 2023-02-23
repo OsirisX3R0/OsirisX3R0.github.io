@@ -17,19 +17,24 @@ for (let section of sections) {
 const experienceNav = document.querySelectorAll(".jobs nav a");
 const jobContainer = document.querySelector(".jobs .job");
 const jobsTemplates = [...document.querySelectorAll(".jobs template")];
+
+/**
+ * Updates the content of the experience UI
+ * @param {Element?} template Template element to use
+ */
+const updateExpContent = (template = jobsTemplates[0]) => {
+  let content = template.content.cloneNode(true);
+  jobContainer.innerHTML = "";
+  jobContainer.appendChild(content);
+};
+
 for (let link of experienceNav) {
   link.addEventListener("click", () => {
-    let template = jobsTemplates.find((j) => j.id === link.id);
-    let jobContent = template.content.cloneNode(true);
-    jobContainer.innerHTML = "";
-    jobContainer.appendChild(jobContent);
+    updateExpContent(jobsTemplates.find((j) => j.id === link.id));
   });
 }
 
-let defualtTemplate = jobsTemplates[0];
-let defaultContent = defualtTemplate.content.cloneNode(true);
-jobContainer.innerHTML = "";
-jobContainer.appendChild(defaultContent);
+updateExpContent();
 
 // Single-open accordion functionality for jobs
 const jobs = document.querySelectorAll("details.job");

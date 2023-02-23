@@ -1,10 +1,15 @@
 /* BASE */
 
 :root {
-  --background: #141414;
-  --foreground: #d5d5d5;
-  --accent: #92dce5;
-  --accent-light: #a2eaf3;
+  --black: #141414;
+  --white: #d5d5d5;
+  --background: var(--black);
+  --foreground: var(--white);
+  --rose: #c2847a;
+  --rose-light: #d4a9a2;
+  --rose-transparent: rgba(230, 178, 170, .25);
+  --blue: #92dce5;
+  --blue-light: #b3e6ed;
 
   --base-sizing: 1rem;
 
@@ -42,7 +47,9 @@ h1, h2 {
 h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.75rem;
+  color: var(--blue);
   margin-bottom: var(--base-sizing);
+  margin-right: calc(var(--base-sizing) / 2);
   position: relative;
 }
 
@@ -61,6 +68,7 @@ h6 {
 }
 
 section {
+  min-height: 100vh;
   padding: 4.25rem 1rem;
   display: flex;
   opacity: 0;
@@ -71,6 +79,10 @@ section {
 
 section.show {
   opacity: 1;
+}
+
+section h3 {
+  writing-mode: vertical-lr;
 }
 
 section .content {
@@ -84,16 +96,42 @@ ul, p {
   margin-bottom: var(--base-sizing);
 }
 
+.primary {
+  background-color: var(--rose);
+}
+
+.primary-text {
+  color: var(--rose);
+}
+
 .accent {
-  background-color: var(--accent);
+  background-color: var(--blue);
 }
 
 .accent-text {
-  color: var(--accent);
+  color: var(--blue);
 }
 
 p {
   margin-bottom: var(--base-sizing);
+}
+
+a {
+  font-family: 'Source Code Pro', monospace;
+  color: var(--foreground);
+  text-decoration: none;  
+}
+
+nav a {
+  text-shadow: none;
+  cursor: pointer;
+  transition: .5s;
+}
+
+nav a:hover {
+  color: #92dce5;
+  text-shadow: 0 0 5px var(--rose), 0 0 5px #f5f5f5;
+  font-size: 1.1rem;
 }
 
 /* HEADER */
@@ -116,21 +154,18 @@ header nav {
   gap: var(--base-sizing);
 }
 
-a {
-  font-family: 'Source Code Pro', monospace;
-  color: var(--foreground);
-  text-decoration: none;
-  cursor: pointer;
-}
-
-a:hover {
-  color: #92dce5;
-}
-
 a.button {
-  border: 1px solid var(--background);
+  border: 1px solid var(--black);
   border-radius: 3px;
   padding: var(--base-sizing);
+}
+
+a.button.primary {
+  color: var(--black)
+}
+
+a.button.primary:hover {
+  background-color: var(--rose-light);
 }
 
 a.button.accent {
@@ -138,7 +173,7 @@ a.button.accent {
 }
 
 a.button.accent:hover {
-  background-color: var(--accent-light);
+  background-color: var(--blue-light);
 }
 
 /* HERO */
@@ -174,7 +209,7 @@ a.button.accent:hover {
 
 .hero h2::after {
   content: '|';
-  color: var(--accent);
+  color: var(--blue);
   animation: 1s infinite steps(1, jump-start) blink;
 }
 
@@ -194,14 +229,22 @@ a.button.accent:hover {
 
 /* ABOUT */
 
+.about .content {
+  grid-template-columns: auto 1fr;
+}
+
+.about h3 {
+  transform: scaleY(-1) scaleX(-1);
+}
+
+.about p:last-of-type {
+  grid-column: 1 / -1;
+}
+
 img.avatar {
   width: 125px;
   margin-left: var(--base-sizing);
   float: right;
-}
-
-h4:has(+ .tech) {  
-  margin-top: var(--base-sizing);
 }
 
 .tech {
@@ -209,6 +252,12 @@ h4:has(+ .tech) {
   grid-template-columns: repeat(5, 30px);
   gap: var(--base-sizing);
   grid-auto-flow: dense;
+  grid-column: 1 / -1;
+}
+
+.tech h4 {
+  margin-top: var(--base-sizing);
+  grid-column: 1 / -1;
 }
 
 .tech img {
@@ -233,9 +282,15 @@ h4:has(+ .tech) {
 
 /* EXPERIENCE */
 
+.experience .content {
+  grid-template-columns: 1fr auto;
+  align-items: flex-end;
+}
+
 .jobs {
+  height: 350px;
   display: grid;
-  grid-template-columns: 50px minmax(100px, 550px);
+  grid-template-columns: 60px minmax(100px, 550px);
   gap: 1.5rem;
 }
 
@@ -248,11 +303,19 @@ h4:has(+ .tech) {
   margin: 0;
   display: grid;
   list-style-type: none;
-  align-items: center;
+  align-items: stretch;
 }
 
+/* .jobs nav li {
+  display: grid;
+  align-items: center;
+} */
+
 .jobs nav a {
-  transition: font-size .5s;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
 }
 
 .jobs nav a:hover {
@@ -282,9 +345,9 @@ h4:has(+ .tech) {
   padding: var(--base-sizing) var(--base-sizing) 2rem;
 }
 
-.job:not(:last-child) {
-  border-bottom: 1px solid var(--accent);
-}
+/* .job:not(:last-child) {
+  border-bottom: 1px solid var(--blue);
+} */
 
 .job summary {
   height: 0;
@@ -293,17 +356,17 @@ h4:has(+ .tech) {
 
 .job[open] summary {
   height: auto;
-  color: var(--accent);
+  color: var(--blue);
   font-weight: bold;
 }
 
 .job summary::marker {
-  color: var(--accent);
+  color: var(--blue);
   font-size: .7rem;
 }
 
 .job h4 {
-  color: var(--accent);
+  color: var(--blue);
   display: inline-block;
 }
 
@@ -325,7 +388,7 @@ h4:has(+ .tech) {
   font-family: 'Source Code Pro', monospace;
   font-size: .5rem;
   font-weight: bold;
-  color: var(--accent);
+  color: var(--blue);
 }
 
 .slider {
@@ -378,6 +441,14 @@ div.projects {
   display: grid;
   grid-template-columns: repeat(2, 300px);
   gap: var(--base-sizing);
+}
+
+.projects .content {
+  grid-template-columns: auto 1fr;
+}
+
+.projects h3 {
+  transform: scaleY(-1) scaleX(-1);
 }
 
 .project {
@@ -506,10 +577,15 @@ dialog#projectDialog .content p {
 
 /* CONTACT */
 
+section.contact h3 {
+  color: var(--black);
+  writing-mode: horizontal-tb;
+}
+
 .contact .card {
   background-color: var(--foreground);
   color: var(--background);
-  border: 1px solid var(--background);
+  border: 1px solid var(--black);
   border-radius: 5px;
   padding: 2rem;
   position: relative;
@@ -518,7 +594,7 @@ dialog#projectDialog .content p {
 
 .contact .card::before {
   content: '</>';
-  color: var(--accent);
+  color: var(--blue);
   filter: brightness(0.7) opacity(0.3);
   font-size: 6rem;
   position: absolute;
@@ -537,10 +613,10 @@ dialog#projectDialog .content p {
 
 @media (prefers-color-scheme: light) {
   :root {
-    --background: #d5d5d5;
-    --foreground: #141414;
-    --accent: #92dce5;
-    --accent-light: #a2eaf3;
+    --background: var(--white);
+    --foreground: var(--black);
+    --blue: #92dce5;
+    --blue-light: #a2eaf3;
   }
 }
 
