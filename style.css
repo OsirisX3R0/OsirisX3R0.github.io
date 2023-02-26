@@ -306,11 +306,6 @@ img.avatar {
   align-items: stretch;
 }
 
-/* .jobs nav li {
-  display: grid;
-  align-items: center;
-} */
-
 .jobs nav a {
   width: 100%;
   height: 100%;
@@ -322,47 +317,16 @@ img.avatar {
   font-size: .9rem;
 }
 
-/* .experience nav {
-  font-size: .7rem;
-  display: flex;
-  list-style-type: none;
-}
-
-.experience nav li {
-  padding: .5rem;
-}
-
-.experience nav a {
-  transition: font-size .5s;
-}
-
-.experience nav a:hover {
-  font-size: .9rem;
-} */
-
 .job {
   max-width: 600px;
   padding: var(--base-sizing) var(--base-sizing) 2rem;
+  opacity: 0;
+  transition: .3s;
 }
 
-/* .job:not(:last-child) {
-  border-bottom: 1px solid var(--blue);
-} */
-
-.job summary {
-  height: 0;
-  transition: .2s;
-}
-
-.job[open] summary {
-  height: auto;
-  color: var(--blue);
-  font-weight: bold;
-}
-
-.job summary::marker {
-  color: var(--blue);
-  font-size: .7rem;
+.job.show {
+  opacity: 1;
+  transition: .3s;
 }
 
 .job h4 {
@@ -505,25 +469,6 @@ img.icon {
 img.icon:hover {
   filter: hue-rotate(180deg)
 }
-
-/* dialog#projectDialog {
-  width: 80%;
-  background-color: var(--background);
-  color: var(--foreground);
-  border-radius: 3px;
-  margin: auto;
-  padding: 1.25rem;
-}
-
-dialog#projectDialog form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--base-sizing);
-}
-
-dialog#projectDialog .content p {
-  margin-top: .65rem;
-} */
 
 .tags {
   margin-top: .35rem;

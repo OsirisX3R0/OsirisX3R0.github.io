@@ -21,11 +21,17 @@ const jobsTemplates = [...document.querySelectorAll(".jobs template")];
 /**
  * Updates the content of the experience UI
  * @param {Element?} template Template element to use
+ * @returns {void}
  */
 const updateExpContent = (template = jobsTemplates[0]) => {
+  /** @type {Element} */
   let content = template.content.cloneNode(true);
-  jobContainer.innerHTML = "";
-  jobContainer.appendChild(content);
+  jobContainer.classList.toggle("show");
+  setTimeout(() => {
+    jobContainer.innerHTML = "";
+    jobContainer.appendChild(content);
+    jobContainer.classList.toggle("show");
+  }, 300);
 };
 
 for (let link of experienceNav) {
