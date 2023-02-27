@@ -2,9 +2,13 @@
 
 :root {
   --black: #141414;
+  --black-light: #202020;
   --white: #d5d5d5;
+  --white-ligth: #d7d7d7;
   --background: var(--black);
+  --background-light: var(--black-light);
   --foreground: var(--white);
+  --foreground-light: var(--white-light);
   --rose: #c2847a;
   --rose-light: #d4a9a2;
   --rose-transparent: rgba(230, 178, 170, .25);
@@ -134,6 +138,51 @@ nav a:hover {
   font-size: 1.1rem;
 }
 
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  background-color: var(--black-light);
+  border-radius: 5px;
+  padding: .3rem;
+  display: inline-block;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  transition: .3s;
+}
+
+[data-tooltip]:hover::before {
+  opacity: 1;
+}
+
+[data-tooltip][data-tooltip-top]::before {
+  top: -15px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+[data-tooltip][data-tooltip-right]::before {
+  right: -35px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+[data-tooltip][data-tooltip-bottom]::before {
+  bottom: -45px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+[data-tooltip][data-tooltip-left]::before {
+  left: -35px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* HEADER */
 
 header {
@@ -260,11 +309,15 @@ img.avatar {
   grid-column: 1 / -1;
 }
 
-.tech img {
+.tech div {
   width: 30px;
 }
 
-.tech img.lg {
+.tech img {
+  width: 100%;
+}
+
+.tech .lg {
   width: 74px;
   grid-column: span 2;
   grid-row: span 2;
@@ -559,7 +612,9 @@ section.contact h3 {
 @media (prefers-color-scheme: light) {
   :root {
     --background: var(--white);
+    --background-light: var(--white-light);
     --foreground: var(--black);
+    --foreground-light: var(--black-light);
     --blue: #92dce5;
     --blue-light: #a2eaf3;
   }
