@@ -1,3 +1,10 @@
+// Theme switcher
+const themeButton = document.querySelector(".button.theme");
+themeButton?.addEventListener("click", () => {
+  const body = document.querySelector("body");
+  body.classList.toggle("light");
+});
+
 // Fade-in animation for sections
 const sections = document.querySelectorAll("section");
 const intObserver = new IntersectionObserver((entries, observer) => {

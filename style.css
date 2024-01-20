@@ -34,6 +34,15 @@ body {
   scroll-behavior: smooth;
 }
 
+body.light {
+  --background: var(--white);
+  --background-light: var(--white-light);
+  --foreground: var(--black);
+  --foreground-light: var(--black-light);
+  --blue: #74d2de;
+  --blue-light: #a2eaf3;
+}
+
 h1, h2 {
   font-family: 'Source Code Pro', monospace;
   font-size: 2.7rem;
@@ -144,7 +153,8 @@ nav a:hover {
 
 [data-tooltip]::before {
   content: attr(data-tooltip);
-  background-color: var(--black-light);
+  background-color: var(--background);
+  color: var(--foreground);
   border-radius: 5px;
   padding: .3rem;
   display: inline-block;
@@ -193,6 +203,7 @@ header {
   box-shadow: 0 0 4px #141414;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   z-index: 10;
 }
 
@@ -201,12 +212,14 @@ header nav {
   padding: var(--base-sizing);
   display: flex;
   gap: var(--base-sizing);
+  align-items: center;
 }
 
 a.button {
   border: 1px solid var(--black);
   border-radius: 3px;
   padding: var(--base-sizing);
+  cursor: pointer;
 }
 
 a.button.primary {
@@ -215,6 +228,15 @@ a.button.primary {
 
 a.button.primary:hover {
   background-color: var(--rose-light);
+}
+
+a.button.secondary {
+  border-width: 0;
+}
+
+a.button.secondary:hover {
+  background-color: var(--blue-light);
+  color: var(--black);
 }
 
 a.button.accent {
