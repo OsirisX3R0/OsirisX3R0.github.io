@@ -13,7 +13,7 @@
   --rose-light: #d4a9a2;
   --rose-transparent: rgba(230, 178, 170, .25);
   --blue: #92dce5;
-  --blue-light: #b3e6ed;
+  --blue-light: hsl(187, 67%, 51%);
 
   --base-sizing: 1rem;
 
@@ -598,7 +598,7 @@ img.icon:hover {
 /* CONTACT */
 
 section.contact h3 {
-  color: var(--black);
+  color: var(--background);
   writing-mode: horizontal-tb;
 }
 
