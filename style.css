@@ -3,8 +3,10 @@
 :root {
   --black: #141414;
   --black-light: #202020;
+  --black-pure: #000;
   --white: #d5d5d5;
   --white-ligth: #d7d7d7;
+  --white-pure: #fff;
   --background: var(--black);
   --background-light: var(--black-light);
   --foreground: var(--white);
@@ -13,7 +15,8 @@
   --rose-light: #d4a9a2;
   --rose-transparent: rgba(230, 178, 170, .25);
   --blue: #92dce5;
-  --blue-light: hsl(187, 67%, 51%);
+  --blue-light: #2ec2d6;
+  --glow: var(--white-pure);
 
   --base-sizing: 1rem;
 
@@ -39,8 +42,9 @@ body.light {
   --background-light: var(--white-light);
   --foreground: var(--black);
   --foreground-light: var(--black-light);
-  --blue: #74d2de;
-  --blue-light: #a2eaf3;
+  --blue: #2ec2d6;
+  --blue-light: #74d2de;
+  --glow: #ddb812;
 }
 
 h1, h2 {
@@ -245,6 +249,21 @@ a.button.accent {
 
 a.button.accent:hover {
   background-color: var(--blue-light);
+}
+
+a.button.icon {
+  background-color: transparent;
+  border-width: 0;
+  font-size: 1.65rem;
+  padding: calc(var(--base-sizing) * .8) var(--base-sizing);
+}
+
+body.light a.button.icon {
+  font-size: 2rem;
+}
+
+a.button.icon:hover {
+  text-shadow: 0 0 4px var(--glow);
 }
 
 /* HERO */
@@ -599,7 +618,12 @@ img.icon:hover {
 
 section.contact h3 {
   color: var(--background);
+  font-size: 3rem;
   writing-mode: horizontal-tb;
+}
+
+section.contact h4 {
+  margin-bottom: 3rem;
 }
 
 .contact .card {

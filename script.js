@@ -1,9 +1,19 @@
+const body = document.querySelector("body");
+
 // Theme switcher
+let theme = localStorage.getItem("theme") || "dark";
 const themeButton = document.querySelector(".button.theme");
-themeButton?.addEventListener("click", () => {
-  const body = document.querySelector("body");
+themeButton.innerHTML = theme === "light" ? "\u263c" : "\u263d";
+if (theme === "light") body.classList.toggle("light");
+
+const toggleTheme = () => {
   body.classList.toggle("light");
-});
+  theme = theme === "light" ? "dark" : "light";
+  themeButton.innerHTML = theme === "light" ? "\u263c" : "\u263d";
+  localStorage.setItem("theme", theme);
+};
+
+themeButton.addEventListener("click", toggleTheme);
 
 // Fade-in animation for sections
 const sections = document.querySelectorAll("section");
@@ -28,7 +38,6 @@ const jobsTemplates = [...document.querySelectorAll(".jobs template")];
 /**
  * Updates the content of the experience UI
  * @param {Element?} template Template element to use
- * @returns {void}
  */
 const updateExpContent = (template = jobsTemplates[0]) => {
   /** @type {Element} */
