@@ -31,7 +31,7 @@ for (let section of sections) {
 }
 
 // Experience functionality
-const experienceNav = document.querySelectorAll(".jobs nav a");
+const experienceNavLinks = document.querySelectorAll(".jobs nav a");
 const jobContainer = document.querySelector(".jobs .job");
 const jobsTemplates = [...document.querySelectorAll(".jobs template")];
 
@@ -50,7 +50,7 @@ const updateExpContent = (template = jobsTemplates[0]) => {
   }, 300);
 };
 
-for (let link of experienceNav) {
+for (let link of experienceNavLinks) {
   link.addEventListener("click", () => {
     updateExpContent(jobsTemplates.find((j) => j.id === link.id));
   });
@@ -61,14 +61,14 @@ updateExpContent();
 // Single-open accordion functionality for jobs
 const jobs = document.querySelectorAll("details.job");
 for (let details of jobs) {
-  details.addEventListener("toggle", (e) => {
-    let open = e.currentTarget.open;
-    e.currentTarget.setAttribute("data-active", open);
+  details.addEventListener("toggle", (ev) => {
+    let open = ev.currentTarget.open;
+    ev.currentTarget.setAttribute("data-active", open);
     for (let d of jobs) {
       if (
         open &&
-        (d.id !== e.currentTarget.id ||
-          e.currentTarget.dataset.active !== "true") &&
+        (d.id !== ev.currentTarget.id ||
+          ev.currentTarget.dataset.active !== "true") &&
         (d.open || d.dataset.active !== "true")
       ) {
         d.open = false;
