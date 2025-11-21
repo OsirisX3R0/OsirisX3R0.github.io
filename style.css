@@ -14,8 +14,8 @@
   --rose: #c2847a;
   --rose-light: #d4a9a2;
   --rose-transparent: rgba(230, 178, 170, .25);
-  --blue: #92dce5;
-  --blue-light: #2ec2d6;
+  --main: hsl(10, 69%, 65%);
+  --main-light: hsl(10, 64%, 34%);
   --glow: var(--white-pure);
 
   --base-sizing: 1rem;
@@ -42,8 +42,8 @@ body.light {
   --background-light: var(--white-light);
   --foreground: var(--black);
   --foreground-light: var(--black-light);
-  --blue: #2ec2d6;
-  --blue-light: #74d2de;
+  --main: hsl(10, 64%, 34%);
+  --main-light: hsl(10, 69%, 65%);
   --glow: #ddb812;
 }
 
@@ -64,7 +64,7 @@ h1, h2 {
 h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.75rem;
-  color: var(--blue);
+  color: var(--main);
   margin-bottom: var(--base-sizing);
   margin-right: calc(var(--base-sizing) / 2);
   position: relative;
@@ -114,19 +114,19 @@ ul, p {
 }
 
 .primary {
-  background-color: var(--rose);
+  background-color: var(--main);
 }
 
 .primary-text {
-  color: var(--rose);
+  color: var(--main);
 }
 
 .accent {
-  background-color: var(--blue);
+  background-color: var(--main);
 }
 
 .accent-text {
-  color: var(--blue);
+  color: var(--main);
 }
 
 p {
@@ -147,7 +147,7 @@ nav a {
 
 nav a:hover {
   color: #92dce5;
-  text-shadow: 0 0 5px var(--rose), 0 0 5px #f5f5f5;
+  text-shadow: 0 0 5px var(--main), 0 0 5px #f5f5f5;
   font-size: 1.1rem;
 }
 
@@ -199,7 +199,7 @@ nav a:hover {
 
 /* HEADER */
 
-header {
+header#main {
   background-color: var(--background);
   padding: .6rem;
   position: sticky;
@@ -211,7 +211,7 @@ header {
   z-index: 10;
 }
 
-header nav {
+header#main nav {
   list-style-type: none;
   padding: var(--base-sizing);
   display: flex;
@@ -231,7 +231,7 @@ a.button.primary {
 }
 
 a.button.primary:hover {
-  background-color: var(--rose-light);
+  background-color: var(--main-light);
 }
 
 a.button.secondary {
@@ -239,7 +239,7 @@ a.button.secondary {
 }
 
 a.button.secondary:hover {
-  background-color: var(--blue-light);
+  background-color: var(--main-light);
   color: var(--black);
 }
 
@@ -248,7 +248,7 @@ a.button.accent {
 }
 
 a.button.accent:hover {
-  background-color: var(--blue-light);
+  background-color: var(--main-light);
 }
 
 a.button.icon {
@@ -299,7 +299,7 @@ a.button.icon:hover {
 
 .hero h2::after {
   content: '|';
-  color: var(--blue);
+  color: var(--main);
   animation: 1s infinite steps(1, jump-start) blink;
 }
 
@@ -413,9 +413,14 @@ img.avatar {
 
 .job {
   max-width: 600px;
+  height: 750px;
   padding: var(--base-sizing) var(--base-sizing) 2rem;
   opacity: 0;
   transition: .3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* overflow-y: scroll; */
 }
 
 .job.show {
@@ -424,7 +429,7 @@ img.avatar {
 }
 
 .job h4 {
-  color: var(--blue);
+  color: var(--main);
   display: inline-block;
 }
 
@@ -446,7 +451,7 @@ img.avatar {
   font-family: 'Source Code Pro', monospace;
   font-size: .5rem;
   font-weight: bold;
-  color: var(--blue);
+  color: var(--main);
 }
 
 .slider {
@@ -638,7 +643,7 @@ section.contact h4 {
 
 .contact .card::before {
   content: '</>';
-  color: var(--blue);
+  color: var(--main);
   filter: brightness(0.7) opacity(0.3);
   font-size: 6rem;
   position: absolute;
@@ -661,8 +666,8 @@ section.contact h4 {
     --background-light: var(--white-light);
     --foreground: var(--black);
     --foreground-light: var(--black-light);
-    --blue: #92dce5;
-    --blue-light: #a2eaf3;
+    --main: hsl(10, 64%, 34%);
+    --main-light: hsl(10, 69%, 65%);
   }
 }
 
