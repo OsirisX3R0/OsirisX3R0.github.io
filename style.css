@@ -382,7 +382,6 @@ img.avatar {
 }
 
 .jobs {
-  height: 350px;
   display: grid;
   grid-template-columns: 60px minmax(100px, 550px);
   gap: 1.5rem;
