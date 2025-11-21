@@ -618,6 +618,10 @@ img.icon:hover {
   background-color: #026e00;
   color: var(--foreground);
 }
+.tag.js {
+  background-color: #f90;
+  color: var(--background);
+}
 
 /* CONTACT */
 
