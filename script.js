@@ -38,8 +38,12 @@ const jobsTemplates = [...document.querySelectorAll(".jobs template")];
 /**
  * Updates the content of the experience UI
  * @param {Element?} template Template element to use
+ * @param {Element?} link Link element to update with 'selected' class
  */
-const updateExpContent = (template = jobsTemplates[0]) => {
+const updateExpContent = (
+  template = jobsTemplates[0],
+  link = experienceNavLinks[0]
+) => {
   /** @type {Element} */
   let content = template.content.cloneNode(true);
   jobContainer.classList.toggle("show");
@@ -48,11 +52,16 @@ const updateExpContent = (template = jobsTemplates[0]) => {
     jobContainer.appendChild(content);
     jobContainer.classList.toggle("show");
   }, 300);
+  experienceNavLinks.forEach((link) => link.classList.remove("selected"));
+  link.classList.add("selected");
 };
 
 for (let link of experienceNavLinks) {
   link.addEventListener("click", () => {
-    updateExpContent(jobsTemplates.find((j) => j.id === link.id));
+    updateExpContent(
+      jobsTemplates.find((j) => j.id === link.id),
+      link
+    );
   });
 }
 

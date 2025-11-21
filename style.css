@@ -145,7 +145,8 @@ nav a {
   transition: .5s;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.selected {
   color: #92dce5;
   text-shadow: 0 0 5px var(--main), 0 0 5px #f5f5f5;
   font-size: 1.1rem;
