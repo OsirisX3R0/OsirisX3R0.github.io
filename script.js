@@ -1,19 +1,27 @@
 const body = document.querySelector("body");
 
 // Theme switcher
-let theme = localStorage.getItem("theme") || "dark";
+const sunIcon = "\u263c";
+const moonIcon = "\u263d";
 const themeButton = document.querySelector(".button.theme");
-themeButton.innerHTML = theme === "light" ? "\u263c" : "\u263d";
-if (theme === "light") body.classList.toggle("light");
+/** @type {'light' | 'dark' | null} */
+let theme = null;
 
-const toggleTheme = () => {
-  body.classList.toggle("light");
-  theme = theme === "light" ? "dark" : "light";
-  themeButton.innerHTML = theme === "light" ? "\u263c" : "\u263d";
+/**
+ * Toggles the theme
+ * @param {'light' | 'dark' | undefined} initial Optional initial theme to be set
+ */
+const toggleTheme = (initial) => {
+  if (initial) theme = initial;
+  else theme = theme === "light" ? "dark" : "light";
+  if (!initial || theme === "light") body.classList.toggle("light");
+  themeButton.innerHTML = theme === "light" ? moonIcon : sunIcon;
   localStorage.setItem("theme", theme);
 };
 
-themeButton.addEventListener("click", toggleTheme);
+toggleTheme(localStorage.getItem("theme") || "dark");
+
+themeButton.addEventListener("click", () => toggleTheme());
 
 // Fade-in animation for sections
 const sections = document.querySelectorAll("section");

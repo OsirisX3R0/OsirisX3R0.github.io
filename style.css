@@ -528,18 +528,39 @@ div.projects {
 
 .project:hover {
   grid-template-columns: 4fr 2fr;
+  grid-template-rows: auto 1fr auto;
   gap: var(--base-sizing);
+}
+
+.project img {
+  grid-column: 1 / -1;
+  transition: .5s;
+}
+
+.project:hover img {
+  grid-column: span 1;
 }
 
 .project .right {
   font-size: .75rem;
-  display: none;
-  opacity: 0;
-  transition: .5s .2s;
 }
 
-.project:hover .right {
-  display: block;
+.project .bottom {
+  font-size: .9rem;
+  grid-column: 1 / -1;
+}
+
+.project .right,
+.project .bottom {
+  font-size: .75rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.project:hover .right,
+.project:hover .bottom {
+  visibility: visible;
   opacity: 1;
 }
 
